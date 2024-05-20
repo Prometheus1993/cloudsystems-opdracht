@@ -1,0 +1,378 @@
+/* Reset en basisstijlen */
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #171a39;
+  color: #171a39;
+  background-image: url("/assets/icons/logo.png");
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container met grid lay-out */
+.container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "nav nav"
+    "header header"
+    "main aside"
+    "footer footer";
+  gap: 20px;
+  max-width: 100vw;
+}
+
+/* Navigatie stijlen */
+nav {
+  grid-area: nav;
+  background-color: rgba(0, 0, 0, 0.484);
+  padding: 0.25rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #96a4d3;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+nav ul li a:hover,
+nav ul li .active {
+  color: #a98f76;
+  font-weight: bold;
+}
+
+/* Zoekbalk stijlen */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.search-container form {
+  display: flex;
+  align-items: center;
+}
+
+.search-container input[type="text"] {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  color: #171a39;
+}
+
+.search-container button {
+  padding: 5px 10px;
+  background-color: #a98f76;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: #927a5e;
+}
+
+/* Hoofdkop stijlen */
+header {
+  grid-area: header;
+  text-align: center;
+}
+
+.title {
+  font-size: xx-large;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  margin: 0 auto;
+  color: #a98f76;
+}
+
+/* Hoofdinhoud stijlen */
+.main-content {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Detailartikel stijlen */
+.detail {
+  background-color: #a98f76;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.detail .image img {
+  width: 300px;
+  height: auto;
+  filter: drop-shadow(0px 20px 20px #0009);
+}
+
+.detail .content {
+  flex: 1;
+  padding: 0 20px;
+  text-align: left;
+  color: #171a39;
+}
+
+.detail .content h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.detail .content .price {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.detail .content .buttons button {
+  padding: 10px;
+  background: #171a39;
+  color: #a98f76;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.detail .content .buttons button:hover {
+  background: #96a4d3;
+  color: #171a39;
+}
+
+.wishlist-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #171a39;
+  transition: color 0.3s;
+}
+
+.wishlist-icon:hover {
+  color: #ff0000;
+}
+
+.wishlist-active {
+  color: red; /* Kleur wanneer het icoon actief is */
+}
+
+.detail .content .description {
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+/* Stijlen voor reviewformulier */
+.review-form {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #171a39;
+  margin: 0 auto;
+}
+
+.review-form h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.review-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.review-form input[type="text"],
+.review-form textarea {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.review-form textarea {
+  height: 100px;
+}
+
+.review-form button {
+  background-color: #171a39;
+  color: #a98f76;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.review-form button:hover {
+  background-color: #96a4d3;
+  color: #171a39;
+}
+
+.review-form .review-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.review-form .like-button, .review-form .dislike-button {
+  background-color: transparent;
+  color: #171a39;
+  border: 2px solid #171a39;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.review-form .like-button:hover, .review-form .dislike-button:hover {
+  background-color: #171a39;
+  color: #fff;
+}
+
+
+/* Stijlen voor de aside */
+aside {
+  background-color: #f4f4f4;
+  padding: 20px;
+  padding-right: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 80vh;
+}
+
+/* Stijlen voor het gedeelte "Auteur Spotlights" */
+.author-spotlights {
+  margin-top: 20px;
+}
+
+.author-spotlights ul {
+  list-style: none;
+  padding: 0;
+}
+
+.author-spotlights ul li a {
+  color: #171a39;
+  text-decoration: none;
+}
+
+.author-spotlights ul li a:hover {
+  text-decoration: underline;
+}
+
+aside h3 {
+  color: #171a39;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside ul li {
+  margin-bottom: 10px;
+}
+
+aside ul li a {
+  color: #171a39;
+  text-decoration: none;
+}
+
+aside ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Stijlen voor het nieuwsbriefabonnementsgedeelte */
+aside .newsletter-subscription form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+aside .newsletter-subscription input[type="email"] {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+aside .newsletter-subscription button {
+  background-color: #a98f76;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+aside .newsletter-subscription button:hover {
+  background-color: #927a5e;
+}
+
+/* Footerstijlen */
+footer {
+  grid-area: footer;
+  background-color: black;
+  color: #96a4d3;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  font-size: 0.8rem;
+}
+
+/* Responsieve ontwerp aanpassingen */
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "header"
+      "main"
+      "aside"
+      "footer";
+  }
+
+  .detail,
+  .review-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detail .image,
+  .detail .content {
+    width: 100%;
+  }
+}
